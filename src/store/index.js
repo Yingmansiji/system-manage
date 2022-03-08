@@ -1,30 +1,62 @@
-
-import { createStore } from 'vuex'
-
-import bannerStore from './modules/bannerStore'
-import rankStore from './modules/rankStore'
-import promoteStore from './modules/promoteStore'
-import liveStore from './modules/liveStore'
-import contentStore from './modules/contentStore'
-
-const state = {
-  requesting: false,
-  error: {}
-}
-
-const getters = {
-  requesting: state => state.requesting,
-  error: state => state.error
-}
+import {createStore} from "vuex";
 
 export default createStore({
-  state,
-  getters,
-  modules: {
-    bannerStore,
-    rankStore,
-    promoteStore,
-    liveStore,
-    contentStore
-  }
-})
+    state() {
+        return {
+            "ETH-TOKEN": "",
+            frameSrc: localStorage.getItem("curUrl") || "/app/task/taskList",
+            activeIndex: localStorage.getItem("activeIndex") || "运营平台",
+            tabItems: JSON.parse(localStorage.getItem("tabItems")) || [{
+                ancestorIds: [],
+                authorize: true,
+                haveChild: false,
+                iconCls: "",
+                id: 3,
+                name: "任务列表",
+                pid: 1,
+                pname: "",
+                resource: [],
+                type: "menu",
+                url: "/app/task/taskList",
+                weight: 2
+            }],
+            currentTab: JSON.parse(localStorage.getItem("currentTab")) || {
+                ancestorIds: [],
+                authorize: true,
+                haveChild: false,
+                iconCls: "",
+                id: 3,
+                name: "任务列表",
+                pid: 1,
+                pname: "",
+                resource: [],
+                type: "menu",
+                url: "/app/task/taskList",
+                weight: 2
+            }
+        }
+    },
+    mutations: {
+        "ETH-TOKEN"(state, value) {
+            state["ETH-TOKEN"] = value;
+        },
+        frameSrc(state, value) {
+            state.frameSrc = value;
+            localStorage.setItem("curUrl", value)
+        },
+        tabItems(state, value) {
+            state.tabItems = value;
+            localStorage.setItem("tabItems", JSON.stringify(value))
+        },
+        currentTab(state, value) {
+            state.currentTab = value;
+            localStorage.setItem("currentTab", JSON.stringify(value))
+        },
+        activeIndex(state, value) {
+            state.activeIndex = value;
+            localStorage.setItem("activeIndex", value)
+        }
+    },
+    actions: {},
+    modules: {},
+});
