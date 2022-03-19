@@ -9,10 +9,10 @@ module.exports = {
   // 注意：把productionSourceMap值改为false。不然会导致源码暴露，安全测试不通过。
   productionSourceMap: false,
 
-  /*devServer: {
+  devServer: {
     open: true,
-    port: "8020",
-    proxy: {
+    port: "8022",
+    /*proxy: {
       "/api": {
         target: "http://d-adm.ethicall.cn", // 域名
         ws: false,
@@ -22,8 +22,8 @@ module.exports = {
           "^/api": "",
         },
       },
-    },
-  },*/
+    },*/
+  },
   chainWebpack: (config) => {
     config.module
       .rule("images")

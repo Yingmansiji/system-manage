@@ -3,7 +3,7 @@ import store from "../store";
 
 const Login = () => import("@/views/login");
 const Home = () => import("@/views/Pages/home/index");
-const Tabs = () => import("@/views/Pages/home/tabs");
+// const Tabs = () => import("@/views/Pages/home/tabs");
 
 const routes = [
     {
@@ -15,11 +15,11 @@ const routes = [
         name: "login",
         component: Login,
     },
-    {
+    /*{
         path: "/tabs",
         name: "tabs",
         component: Tabs,
-    },
+    },*/
 ];
 
 const router = createRouter({

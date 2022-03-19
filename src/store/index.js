@@ -6,7 +6,8 @@ export default createStore({
             "ETH-TOKEN": "",
             frameSrc: localStorage.getItem("curUrl") || "/app/task/taskList",
             activeIndex: localStorage.getItem("activeIndex") || "运营平台",
-            tabItems: JSON.parse(localStorage.getItem("tabItems")) || [{
+            tabItems: JSON.parse(localStorage.getItem("tabItems")) || [
+                /*{
                 ancestorIds: [],
                 authorize: true,
                 haveChild: false,
@@ -19,7 +20,22 @@ export default createStore({
                 type: "menu",
                 url: "/app/task/taskList",
                 weight: 2
-            }],
+            }*/
+                {
+                    ancestorIds: [],
+                    authorize: true,
+                    haveChild: false,
+                    iconCls: "",
+                    id: 1,
+                    name: "栏目",
+                    pid: 1,
+                    pname: "",
+                    resource: [],
+                    type: "menu",
+                    url: "/category",
+                    weight: 2
+                }
+            ],
             currentTab: JSON.parse(localStorage.getItem("currentTab")) || {
                 ancestorIds: [],
                 authorize: true,

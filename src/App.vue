@@ -12,22 +12,20 @@ export default {
   },
   methods: {},
   beforeCreate() {
-    console.log("beforeCreate")
   },
   created() {
-    console.log("created")
   },
-  beforeMount() {console.log("beforeMount")},
-  mounted() {console.log("mounted")},
-  beforeUpdate() {console.log("beforeUpdate")},
-  updated() {console.log("updated")},
-  beforeUnmount() {console.log("beforeUnmount")},
-  unmounted() {console.log("unmounted")},
-  errorCaptured() {console.log("errorCaptured")},
-  renderTracked() {console.log("renderTracked")},
-  renderTriggered() {console.log("renderTriggered")},
-  activated() {console.log("activated")},
-  deactivated() {console.log("deactivated")},
+  beforeMount() {},
+  mounted() {},
+  beforeUpdate() {},
+  updated() {},
+  beforeUnmount() {},
+  unmounted() {},
+  errorCaptured() {},
+  renderTracked() {},
+  renderTriggered() {},
+  activated() {},
+  deactivated() {},
 };
 </script>
 
